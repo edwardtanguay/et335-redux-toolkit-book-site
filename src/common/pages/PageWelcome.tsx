@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
+import { add, subtract } from "../../features/cart/cartSlice";
 
 export const PageWelcome = () => {
 	const dispatch = useDispatch();
@@ -7,8 +8,8 @@ export const PageWelcome = () => {
 
 	return (
 		<div className="flex gap-3 items-center">
-			<button>Subtract</button>
-			<button>Add</button>
+			<button onClick={() => dispatch(subtract())}>Subtract</button>
+			<button onClick={() => dispatch(add())}>Add</button>
 			<p className="text-xl">count = {count}</p>
 		</div>
 	)
