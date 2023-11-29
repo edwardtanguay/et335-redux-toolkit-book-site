@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const booksURL = "https://edwardtanguay.vercel.app/share/books.json";
 
 export const PageBooks = () => {
-	const [books, setBooks] = useState<IBooks[]>([]);
+	const [books, setBooks] = useState<IBooks[]>([] as IBooks[]);
 	useEffect(() => {
 		(async () => {
 			const response = await axios.get(booksURL);
