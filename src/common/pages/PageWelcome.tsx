@@ -4,9 +4,7 @@ import { add, subtract, reset } from "../../features/cart/cartSlice";
 
 export const PageWelcome = () => {
 	const dispatch = useDispatch();
-	const { count, numberOfActions } = useSelector(
-		(state: RootState) => state.cart
-	);
+	const { count, numberOfActions } = useSelector( (state: RootState) => state.cart);
 
 	return (
 		<>
