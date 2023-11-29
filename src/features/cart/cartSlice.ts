@@ -25,6 +25,7 @@ export const cartSlice = createSlice({
 		},
 		reset: (state) => {
 			state.count = initialState.count;
+			state.numberOfActions++;
 		}
 	}
 });
