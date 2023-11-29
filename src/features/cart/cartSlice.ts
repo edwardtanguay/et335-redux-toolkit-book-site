@@ -22,9 +22,12 @@ export const cartSlice = createSlice({
 		add: (state) => {
 			state.count++;
 			state.numberOfActions++;
+		},
+		reset: (state) => {
+			state.count = initialState.count;
 		}
 	}
 });
 
-export const { subtract, add } = cartSlice.actions;
+export const { subtract, add, reset } = cartSlice.actions;
 export default cartSlice.reducer;
