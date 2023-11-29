@@ -1,0 +1,1 @@
+- .. make reset button on Welcome page 

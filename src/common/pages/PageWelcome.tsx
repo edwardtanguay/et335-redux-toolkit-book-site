@@ -4,13 +4,18 @@ import { add, subtract } from "../../features/cart/cartSlice";
 
 export const PageWelcome = () => {
 	const dispatch = useDispatch();
-	const count = useSelector((state: RootState) => state.cart.count);
+	const { count, numberOfActions } = useSelector((state: RootState) => state.cart);
 
 	return (
+		<>
 		<div className="flex gap-3 items-center">
 			<button onClick={() => dispatch(subtract())}>Subtract</button>
 			<button onClick={() => dispatch(add())}>Add</button>
 			<p className="text-xl">count = {count}</p>
 		</div>
+		<div>
+				<p>Total actions so far: {numberOfActions}</p>
+		</div>
+		</>
 	)
 }
