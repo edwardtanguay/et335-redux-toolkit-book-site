@@ -10,6 +10,8 @@ import { PageWelcome } from "./common/pages/PageWelcome.tsx";
 import { Page404 } from "./common/pages/Page404.tsx";
 import { PageBooks } from "./common/pages/PageBooks.tsx";
 import { PageCheckout } from "./common/pages/PageCheckout.tsx";
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 
 const router = createBrowserRouter([
 	{
@@ -38,5 +40,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<RouterProvider router={router} />
+	<Provider store={store}>
+		<RouterProvider router={router} />
+	</Provider>
 );
