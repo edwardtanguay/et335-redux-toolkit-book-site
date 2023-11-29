@@ -1,7 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
+import { addBookToCart } from "../../features/cart/cartSlice";
 
 export const PageBooks = () => {
+	const dispatch = useDispatch();
 	const { books } = useSelector((state: RootState) => state.cart);
 	return (
 		<>
@@ -13,7 +15,8 @@ export const PageBooks = () => {
 					return (
 						<div>
 							<img
-								className="w-32 h-fit"
+								className="w-32 h-fit cursor-pointer"
+								onClick={() => dispatch(addBookToCart(book))}
 								src={`https://edwardtanguay.vercel.app/share/images/books/${book.idcode}.png`}
 							/>
 						</div>
